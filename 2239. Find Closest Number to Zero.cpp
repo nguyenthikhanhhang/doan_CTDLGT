@@ -1,0 +1,21 @@
+#include <vector>
+#include <cmath>
+using namespace std;
+
+class Solution {
+public:
+    int findClosestNumber(vector<int>& nums) {
+        int ans = nums[0];
+
+        for (int x : nums) {
+            if (abs(x) < abs(ans)) {
+                ans = x;
+            } 
+            else if (abs(x) == abs(ans) && x > ans) {
+                ans = x;
+            }
+        }
+
+        return ans;
+    }
+};
